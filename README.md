@@ -1,54 +1,122 @@
-# React + TypeScript + Vite
+# Interactive CV Generator with PDF Export
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A professional CV/Resume generator built with React that creates a visually appealing, ATS-friendly PDF with fully selectable text. This project features both an interactive web version and a downloadable PDF version of your CV.
 
-Currently, two official plugins are available:
+## ✨ Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Modern Design**: Clean, professional CV layout with a responsive design
+- **Text Selection**: Generated PDFs have fully selectable text (unlike screenshot-based PDFs)
+- **ATS-Friendly**: Structured content that works well with Applicant Tracking Systems
+- **A4 Format**: Properly sized for standard CV/Resume printing
+- **Responsive Layout**: Adapts to different screen sizes for the web version
+- **Subtle Background Pattern**: Adds visual interest without affecting readability
+- **Timeline Visualization**: Clear visual representation of career progression
+- **Optimized Spacing**: Carefully adjusted to fit content on a single page
+- **Interactive Elements**: Hover effects and visual feedback in the web version
 
-## Expanding the ESLint configuration
+## 🛠️ Technologies Used
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Frontend**: React + TypeScript
+- **Build Tool**: Vite for fast development
+- **Styling**: Tailwind CSS for the web version
+- **PDF Generation**: @react-pdf/renderer for creating selectable PDFs
+- **Fonts**: Roboto font family from CDN for consistent typography
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18 or newer recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository
+   ```bash
+   git clone https://github.com/melih-perveli/cv.git
+   cd cv
+   ```
+
+2. Install dependencies
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Start the development server
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+4. Open your browser and navigate to `http://localhost:5173`
+
+## 📦 Building for Production
+
+```bash
+npm run build
+# or
+yarn build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+The build output will be in the `dist` directory.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🔧 Customization
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Modifying Content
+
+To customize the CV content:
+
+1. Edit the `App.tsx` file for the visual web version
+2. Edit the `PDFDocument.tsx` file for the PDF version
+
+### Styling Adjustments
+
+- **Web Version**: Modify the Tailwind classes in `App.tsx`
+- **PDF Version**: Update the StyleSheet in `PDFDocument.tsx`
+
+### PDF Layout Tips
+
+- Keep text concise to ensure it fits on a single page
+- Adjust font sizes carefully in the StyleSheet
+- Test PDF generation after making significant changes
+- Use the timeline visualization for chronological elements
+
+## 📱 Responsive Design
+
+The web version is fully responsive and will adapt to different screen sizes:
+
+- Desktop: Full layout with all sections visible
+- Tablet: Adjusted spacing and slightly reduced font sizes
+- Mobile: Reorganized layout for optimal viewing on smaller screens
+
+## 🔍 PDF Optimization
+
+The PDF version has been carefully optimized for:
+
+- Text selectability for easy copying
+- ATS compatibility for job applications
+- Print-friendly A4 format
+- Efficient use of space to fit all content on a single page
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+## 🙏 Acknowledgements
+
+- Thanks to the React team for the amazing framework
+- Thanks to the @react-pdf/renderer team for making PDF generation possible
+- Thanks to the Tailwind CSS team for the utility-first CSS framework
+
+## 📝 Recent Updates
+
+- Added subtle background pattern to PDF for visual interest
+- Improved timeline dot positioning for better alignment
+- Optimized spacing throughout the document
+- Added footer with link to web version
+- Enhanced PDF download experience with success feedback
+- Added preview mode indicator
+- Improved error handling for PDF generation

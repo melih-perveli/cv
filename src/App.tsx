@@ -51,6 +51,17 @@ export default function App() {
 
                 {/* Contact info */}
                 <div className="flex flex-wrap gap-4 mt-4 text-xs">
+                  {/* ATS-friendly hidden contact information */}
+                  <div className="sr-only">
+                    <div>Email: melihperveli@windowslive.com</div>
+                    <div>Phone: +90 542 835 0793</div>
+                    <div>Location: Nilüfer, Bursa</div>
+                    <div>Date of Birth: 16.07.1993</div>
+                    <div>
+                      Languages: Turkish (Native), English (Professional)
+                    </div>
+                  </div>
+                  {/* Visible styled contact information */}
                   <div className="flex items-center bg-white/20 px-3 py-1 rounded-full backdrop-blur-sm">
                     <span className="mr-1">📧</span>{" "}
                     melihperveli@windowslive.com
