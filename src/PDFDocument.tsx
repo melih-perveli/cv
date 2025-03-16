@@ -9,6 +9,13 @@ import {
 } from "@react-pdf/renderer";
 import picture from "./assets/WhatsApp Görsel 2025-02-28 saat 17.35.35_360c3ea8.jpg";
 
+import yapikrediLogo from "./assets/yapikredi.png";
+import trtLogo from "./assets/trt.png";
+import fimpleLogo from "./assets/fimple.png";
+import fituneLogo from "./assets/fitune.png";
+import qchargeLogo from "./assets/qCharge.png";
+import trtIzleLogo from "./assets/TRT_İzle_logo.png";
+
 Font.register({
   family: "Roboto",
   fonts: [
@@ -48,7 +55,7 @@ const styles = StyleSheet.create({
     opacity: 0.03,
   },
   header: {
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#DBEAFE",
     padding: 12,
     flexDirection: "row",
     marginBottom: 20,
@@ -60,7 +67,7 @@ const styles = StyleSheet.create({
     left: 0,
     right: 0,
     bottom: 0,
-    backgroundColor: "#3B82F6",
+    backgroundColor: "#DBEAFE",
   },
   photoContainer: {
     width: 85,
@@ -80,13 +87,13 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 20,
     fontWeight: "bold",
-    color: "white",
+    color: "#1E40AF",
     marginBottom: 4,
     fontFamily: "Roboto",
   },
   title: {
     fontSize: 12,
-    color: "white",
+    color: "#1E40AF",
     opacity: 0.9,
     marginBottom: 10,
     fontFamily: "Roboto",
@@ -97,11 +104,17 @@ const styles = StyleSheet.create({
     gap: 10,
   },
   contactItem: {
-    backgroundColor: "rgba(255, 255, 255, 0.2)",
+    flexDirection: "row",
+    alignItems: "center",
+    marginRight: 10,
+    marginBottom: 5,
+  },
+  contactBadge: {
+    backgroundColor: "#BFDBFE",
     padding: "3 6",
     borderRadius: 15,
     fontSize: 8,
-    color: "white",
+    color: "#1E40AF",
     fontFamily: "Roboto",
   },
   mainContent: {
@@ -259,20 +272,30 @@ const styles = StyleSheet.create({
     fontFamily: "Roboto",
   },
   projectContainer: {
-    backgroundColor: "#F8FAFC",
-    borderRadius: 5,
-    padding: 4,
-    marginBottom: 2,
+    flexDirection: "row",
+    marginBottom: 8,
+  },
+  projectLogo: {
+    width: 42,
+    marginRight: 8,
+    borderRadius: 3,
+    alignSelf: "flex-start",
+  },
+  projectContent: {
+    flex: 1,
   },
   projectTitle: {
-    fontSize: 8,
+    fontSize: 10,
     fontWeight: "bold",
-    color: "#4B5563",
+    color: "#3B82F6",
     fontFamily: "Roboto",
+    lineHeight: 1.4,
+    marginBottom: 2,
   },
   projectDescription: {
     fontSize: 8,
-    color: "#6B7280",
+    color: "#4B5563",
+    lineHeight: 1.5,
     fontFamily: "Roboto",
   },
   timeline: {
@@ -289,7 +312,6 @@ const styles = StyleSheet.create({
     height: 7,
     borderRadius: 3.5,
     backgroundColor: "#3B82F6",
-    // left: 5,
     transform: "translateX(-2.5%)",
   },
 });
@@ -312,13 +334,23 @@ const PDFDocument = () => (
           <Text style={styles.title}>Senior Frontend Developer</Text>
 
           <View style={styles.contactInfo}>
-            <Text style={styles.contactItem}>melihperveli@windowslive.com</Text>
-            <Text style={styles.contactItem}>+90 542 835 0793</Text>
-            <Text style={styles.contactItem}>Nilüfer, Bursa</Text>
-            <Text style={styles.contactItem}>16.07.1993</Text>
-            <Text style={styles.contactItem}>
-              Turkish (Native), English (Professional)
-            </Text>
+            <View style={styles.contactItem}>
+              <Text style={styles.contactBadge}>melihperveli@windowslive.com</Text>
+            </View>
+            <View style={styles.contactItem}>
+              <Text style={styles.contactBadge}>+90 542 835 0793</Text>
+            </View>
+            <View style={styles.contactItem}>
+              <Text style={styles.contactBadge}>Nilüfer, Bursa</Text>
+            </View>
+            <View style={styles.contactItem}>
+              <Text style={styles.contactBadge}>16.07.1993</Text>
+            </View>
+            <View style={styles.contactItem}>
+              <Text style={styles.contactBadge}>
+                Turkish (Native), English (Professional)
+              </Text>
+            </View>
           </View>
         </View>
       </View>
@@ -465,68 +497,87 @@ const PDFDocument = () => (
                   <Text style={styles.experienceTitle}>Frontend Developer</Text>
                   <Text style={styles.experienceDate}>Apr 2022 - Present</Text>
                 </View>
-                <Text style={styles.experienceCompany}>3Pounds • Istanbul</Text>
-                <Text style={styles.experienceDescription}>
-                  Started as a Project Lead, successfully managing multiple
-                  large-scale corporate projects. As of March 2024, promoted to
-                  Frontend Team Lead, overseeing the entire frontend development
-                  team and technical direction.
-                </Text>
 
                 <View style={styles.projectContainer}>
-                  <Text style={styles.projectTitle}>Fimple</Text>
-                  <Text style={styles.projectDescription}>
-                    09/24 - 02/25 A configurable white-label banking solution
-                    with customizable themes and multilingual support for
-                    financial institutions
-                  </Text>
+                  <Image src={fimpleLogo} style={styles.projectLogo} />
+                  <View style={styles.projectContent}>
+                    <Text style={styles.projectTitle}>
+                      Fimple (3Pounds Project - Team & Technical Lead)
+                    </Text>
+                    <Text style={styles.projectDescription}>
+                      09/24 - 02/25 A configurable white-label banking solution
+                      with customizable themes and multilingual support for
+                      financial institutions
+                    </Text>
+                  </View>
                 </View>
 
                 <View style={styles.projectContainer}>
-                  <Text style={styles.projectTitle}>YKBank</Text>
-                  <Text style={styles.projectDescription}>
-                    05/23 - 08/24 Web and backoffice construction of YapıKredi
-                    bank, which opened a branch in Germany
-                  </Text>
+                  <Image src={yapikrediLogo} style={styles.projectLogo} />
+                  <View style={styles.projectContent}>
+                    <Text style={styles.projectTitle}>
+                      YapıKredi Bank (3Pounds Project - Team Lead)
+                    </Text>
+                    <Text style={styles.projectDescription}>
+                      05/23 - 08/24 Web and backoffice construction of YapıKredi
+                      bank, which opened a branch in Germany
+                    </Text>
+                  </View>
                 </View>
 
                 <View style={styles.projectContainer}>
-                  <Text style={styles.projectTitle}>Fitune</Text>
-                  <Text style={styles.projectDescription}>
-                    08/23 - 02/24 A website construction that creates a website
-                    with artificial intelligence support in under 30 seconds and
-                    makes it ready to be published in a fully editable way
-                  </Text>
+                  <Image src={fituneLogo} style={styles.projectLogo} />
+                  <View style={styles.projectContent}>
+                    <Text style={styles.projectTitle}>
+                      Fitune (3Pounds Project - Team & Technical Lead)
+                    </Text>
+                    <Text style={styles.projectDescription}>
+                      08/23 - 02/24 A website construction that creates a
+                      website with artificial intelligence support in under 30
+                      seconds and makes it ready to be published in a fully
+                      editable way
+                    </Text>
+                  </View>
                 </View>
 
                 <View style={styles.projectContainer}>
-                  <Text style={styles.projectTitle}>Qcharge</Text>
-                  <Text style={styles.projectDescription}>
-                    01/23 - 12/23 A business that enables the management and
-                    installation of electric vehicle charging stations
-                  </Text>
+                  <Image src={qchargeLogo} style={styles.projectLogo} />
+                  <View style={styles.projectContent}>
+                    <Text style={styles.projectTitle}>
+                      Qcharge (3Pounds Project - Solo Developer)
+                    </Text>
+                    <Text style={styles.projectDescription}>
+                      01/23 - 12/23 A business that enables the management and
+                      installation of electric vehicle charging stations
+                    </Text>
+                  </View>
                 </View>
 
                 <View style={styles.projectContainer}>
-                  <Text style={styles.projectTitle}>TrtIzle (TVOS)</Text>
-                  <Text style={styles.projectDescription}>
-                    06/22 - 08/22 Implemented Google Ad integration for the tvOS
-                    application
-                  </Text>
+                  <Image src={trtIzleLogo} style={styles.projectLogo} />
+                  <View style={styles.projectContent}>
+                    <Text style={styles.projectTitle}>
+                      TRT İzle TVOS (3Pounds Project - Solo Developer)
+                    </Text>
+                    <Text style={styles.projectDescription}>
+                      06/22 - 08/22 Implemented Google Ad integration for the
+                      tvOS application
+                    </Text>
+                  </View>
                 </View>
 
                 <View style={styles.projectContainer}>
-                  <Text style={styles.projectTitle}>TRT.net.tr</Text>
-                  <Text style={styles.projectDescription}>
-                    04/22 - 01/23 Turkey's official radio and television channel
-                  </Text>
+                  <Image src={trtLogo} style={styles.projectLogo} />
+                  <View style={styles.projectContent}>
+                    <Text style={styles.projectTitle}>
+                      TRT.net.tr (3Pounds Project - Senior Developer)
+                    </Text>
+                    <Text style={styles.projectDescription}>
+                      04/22 - 01/23 Turkey's official radio and television
+                      channel
+                    </Text>
+                  </View>
                 </View>
-
-                <Text style={styles.experienceDescription}>
-                  In this work experience, I learned the agile working method,
-                  Web working principles, team lead and how to use the frontend
-                  tools I used much more efficiently.
-                </Text>
               </View>
 
               <View style={styles.experienceContainer}>
